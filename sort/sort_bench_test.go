@@ -43,6 +43,10 @@ func BenchmarkGoSort(b *testing.B) {
 
 	for i := 0; i < b.N; i++ {
 
+		b.StopTimer()
+		s = getTemplateSlice(sliceSize)
+		b.StartTimer()
+
 		sort.SliceStable(s, func(p, q int) bool {
 			return s[p] < s[q]
 		})
@@ -57,6 +61,10 @@ func BenchmarkInsertionSort(b *testing.B) {
 	b.StartTimer()
 
 	for i := 0; i < b.N; i++ {
+
+		b.StopTimer()
+		s = getTemplateSlice(sliceSize)
+		b.StartTimer()
 
 		InsertionSort(s)
 	}
@@ -101,6 +109,10 @@ func BenchmarkBubbleSort(b *testing.B) {
 
 	for i := 0; i < b.N; i++ {
 
+		b.StopTimer()
+		s = getTemplateSlice(sliceSize)
+		b.StartTimer()
+
 		BubbleSort(s)
 	}
 	result = s
@@ -113,6 +125,10 @@ func BenchmarkQuickSort(b *testing.B) {
 	b.StartTimer()
 
 	for i := 0; i < b.N; i++ {
+
+		b.StopTimer()
+		s = getTemplateSlice(sliceSize)
+		b.StartTimer()
 
 		QuickSort(s)
 	}
@@ -127,6 +143,10 @@ func BenchmarkBucketSort100(b *testing.B) {
 
 	for i := 0; i < b.N; i++ {
 
+		b.StopTimer()
+		s = getTemplateSlice(sliceSize)
+		b.StartTimer()
+
 		BucketSort(s, 100)
 	}
 	result = s
@@ -140,7 +160,28 @@ func BenchmarkBucketSort1000(b *testing.B) {
 
 	for i := 0; i < b.N; i++ {
 
+		b.StopTimer()
+		s = getTemplateSlice(sliceSize)
+		b.StartTimer()
+
 		BucketSort(s, 1000)
+	}
+	result = s
+}
+
+func BenchmarkBubbleSortInternal(b *testing.B) {
+
+	b.StopTimer()
+	s := getTemplateSlice(sliceSize)
+	b.StartTimer()
+
+	for i := 0; i < b.N; i++ {
+
+		b.StopTimer()
+		s = getTemplateSlice(sliceSize)
+		b.StartTimer()
+
+		BubbleSortInt(s)
 	}
 	result = s
 }

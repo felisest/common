@@ -67,4 +67,25 @@ func TestIntSort(t *testing.T) {
 	if !SliceEqual(bsorted, template_sorted) {
 		t.Error("Bucket sort: slices not equal")
 	}
+
+	// Bubble sort
+	sorted = make([]int32, size)
+	copy(sorted, template)
+
+	BubbleSort(sorted)
+
+	if !SliceEqual(sorted, template_sorted) {
+		t.Error("Bubble sort: slices not equal")
+	}
+
+	// Internal Bubble sort
+	sorted = make([]int32, size)
+	copy(sorted, template)
+
+	BubbleSortInt(sorted)
+
+	if !SliceEqual(sorted, template_sorted) {
+		t.Error("Internal Bubble sort: slices not equal")
+	}	
+
 }
