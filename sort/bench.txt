@@ -4,13 +4,14 @@ goos: linux
 goarch: amd64
 pkg: felis.est/examples/bsort
 cpu: Intel(R) Core(TM) i5-2400 CPU @ 3.10GHz
-BenchmarkGoSort-4           	   20398	     57105 ns/op	      56 B/op	       2 allocs/op
-BenchmarkInsertionSort-4    	   77566	     15194 ns/op	       0 B/op	       0 allocs/op
-BenchmarkMergeSort-4        	     952	   1252298 ns/op	  539010 B/op	    5903 allocs/op
-BenchmarkMergeSortWiki-4    	       8	 139221534 ns/op	       0 B/op	       0 allocs/op
-BenchmarkBubbleSort-4       	      22	  49747646 ns/op	       0 B/op	       0 allocs/op
-BenchmarkQuickSort-4        	    4596	    220992 ns/op	       0 B/op	       0 allocs/op
-BenchmarkBucketSort100-4    	    4473	    272077 ns/op	  209792 B/op	     112 allocs/op
-BenchmarkBucketSort1000-4   	    2888	    393975 ns/op	  606082 B/op	    1012 allocs/op
+BenchmarkGoSort-4               	     338	   3501854 ns/op	      56 B/op	       2 allocs/op
+BenchmarkInsertionSort-4        	      51	  22676332 ns/op	       0 B/op	       0 allocs/op
+BenchmarkMergeSort-4            	     844	   1235175 ns/op	  539012 B/op	    5903 allocs/op
+BenchmarkMergeSortWiki-4        	       8	 139865403 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBubbleSort-4           	       5	 216208461 ns/op	       0 B/op	       0 allocs/op
+BenchmarkQuickSort-4            	    1672	    710212 ns/op	       0 B/op	       0 allocs/op
+BenchmarkBucketSort100-4        	      50	  23205663 ns/op	  209792 B/op	     112 allocs/op
+BenchmarkBucketSort1000-4       	      51	  23267148 ns/op	  606080 B/op	    1012 allocs/op
+BenchmarkBubbleSortInternal-4   	       9	 123334975 ns/op	      24 B/op	       1 allocs/op
 PASS
-ok  	felis.est/examples/bsort	14.538s
+ok  	felis.est/examples/bsort	14.299s
