@@ -7,6 +7,7 @@ import (
 	"time"
 )
 
+// Произвольное число аргументов на входе, ошибка на выходе
 func DoRetryReflect(retry int, duration int, fn interface{}, args ...interface{}) error {
 	fnValue := reflect.ValueOf(fn)
 	argsValue := make([]reflect.Value, len(args))
