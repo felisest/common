@@ -31,6 +31,7 @@ func DoRetryReflect(retry int, duration int, fn interface{}, args ...interface{}
 	return err
 }
 
+// Один аргумент на входе, ошибка на выходе
 func DoRetryOne[T any](retry int, duration int, fn func(T) error, fnArgs ...any) error {
 
 	var err error
@@ -48,6 +49,7 @@ func DoRetryOne[T any](retry int, duration int, fn func(T) error, fnArgs ...any)
 	return err
 }
 
+// Два аргумента на входе, ошибка на выходе
 func DoRetryTwo[T0 any, T1 any](retry int, duration int, fn func(T0, T1) error, fnArgs ...any) error {
 
 	var err error
